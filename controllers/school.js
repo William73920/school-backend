@@ -75,15 +75,3 @@ export const getSchoolById = async (req, res, next) => {
     next(error);
   }
 };
-
-export const deleteAllSchools = async (req, res, next) => {
-  try {
-    await prisma.school.deleteMany();
-    res.status(200).json({
-      success: true,
-      message: "All schools deleted successfully",
-    });
-  } catch (error) {
-    next(error);
-  }
-};
