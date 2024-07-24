@@ -1,10 +1,5 @@
 import express from "express";
-import {
-  addSchool,
-  deleteAllSchools,
-  getSchoolById,
-  getSchools,
-} from "../controllers/school.js";
+import { addSchool, getSchoolById, getSchools } from "../controllers/school.js";
 import multer from "multer";
 
 export const upload = multer({
@@ -25,7 +20,5 @@ router.post("/", upload.single("image"), addSchool);
 router.get("/", getSchools);
 
 router.get("/:id", getSchoolById);
-
-router.delete("/", deleteAllSchools);
 
 export default router;
